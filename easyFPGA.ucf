@@ -1,0 +1,141 @@
+##################################
+# easyFPGA User Constraint File
+# for board 1.0 Rev.B
+# 
+# _i: input
+# _o: output
+# _io: input or output
+# _n: active low signal
+##################################
+
+##################################
+# Global options
+##################################
+
+net * iostandard = lvttl;
+net * drive = 2;
+net * slew = slow;
+
+##################################
+# Global clock input
+# 4 MHz timespec
+# 50 ohm impedance matched
+##################################
+
+net clk_i loc = p56;
+net clk_i in_term = untuned_split_50;
+net clk_i tnm_net = clk_group;
+timespec ts_clk = period clk_group 125 ns high 50%;
+
+
+##################################
+# Active IC select lines
+# (also used for configuration)
+##################################
+
+net fpga_active_i loc = p65; # DIN/MOSI
+net mcu_active_o loc = p39; # INIT_B
+
+##################################
+# SoC Interaction Bus
+##################################
+
+# data lines
+net fifo_data_io<0> loc = p50;
+net fifo_data_io<1> loc = p46;
+net fifo_data_io<2> loc = p47;
+net fifo_data_io<3> loc = p41;
+net fifo_data_io<4> loc = p48;
+net fifo_data_io<5> loc = p44;
+net fifo_data_io<6> loc = p43;
+net fifo_data_io<7> loc = p45;
+
+# control lines
+net fifo_rxf_n_i loc = p51;
+net fifo_txe_n_i loc = p55;
+net fifo_rd_n_o loc = p40;
+net fifo_wr_o loc = p38;
+
+##################################
+# GPIO Header
+# Unrelated to the FPGAs banks,
+# see PCB label
+##################################
+
+# BANK0 (FPGA Bank3)
+net gpio_b0_00 loc = p2;
+net gpio_b0_01 loc = p1;
+net gpio_b0_02 loc = p6;
+net gpio_b0_03 loc = p5;
+net gpio_b0_04 loc = p8;
+net gpio_b0_05 loc = p7;
+net gpio_b0_06 loc = p10;
+net gpio_b0_07 loc = p9;
+net gpio_b0_08 loc = p12;
+net gpio_b0_09 loc = p11;
+net gpio_b0_10 loc = p15;
+net gpio_b0_11 loc = p14;
+net gpio_b0_12 loc = p17;
+net gpio_b0_13 loc = p16;
+net gpio_b0_14 loc = p22;
+net gpio_b0_15 loc = p21;
+net gpio_b0_16 loc = p24;
+net gpio_b0_17 loc = p23;
+net gpio_b0_18 loc = p27;
+net gpio_b0_19 loc = p26;
+net gpio_b0_20 loc = p30;
+net gpio_b0_21 loc = p29;
+net gpio_b0_22 loc = p33;
+net gpio_b0_23 loc = p32;
+
+# BANK 1 (FPGA Bank0)
+net gpio_b1_00 loc = p112;
+net gpio_b1_01 loc = p111;
+net gpio_b1_02 loc = p115;
+net gpio_b1_03 loc = p114;
+net gpio_b1_04 loc = p117;
+net gpio_b1_05 loc = p116;
+net gpio_b1_06 loc = p119;
+net gpio_b1_07 loc = p118;
+net gpio_b1_08 loc = p121;
+net gpio_b1_09 loc = p120;
+net gpio_b1_10 loc = p124;
+net gpio_b1_11 loc = p123;
+net gpio_b1_12 loc = p127;
+net gpio_b1_13 loc = p126;
+net gpio_b1_14 loc = p132;
+net gpio_b1_15 loc = p131;
+net gpio_b1_16 loc = p134;
+net gpio_b1_17 loc = p133;
+net gpio_b1_18 loc = p138;
+net gpio_b1_19 loc = p137;
+net gpio_b1_20 loc = p140;
+net gpio_b1_21 loc = p139;
+net gpio_b1_22 loc = p142;
+net gpio_b1_23 loc = p141;
+
+# BANK 2 (FPGA Bank1)
+net gpio_b2_00 loc = p75;
+net gpio_b2_01 loc = p74;
+net gpio_b2_02 loc = p79;
+net gpio_b2_03 loc = p78;
+net gpio_b2_04 loc = p81;
+net gpio_b2_05 loc = p80;
+net gpio_b2_06 loc = p83;
+net gpio_b2_07 loc = p82;
+net gpio_b2_08 loc = p85;
+net gpio_b2_09 loc = p84;
+net gpio_b2_10 loc = p88;
+net gpio_b2_11 loc = p87;
+net gpio_b2_12 loc = p93;
+net gpio_b2_13 loc = p92;
+net gpio_b2_14 loc = p95;
+net gpio_b2_15 loc = p94;
+net gpio_b2_16 loc = p98;
+net gpio_b2_17 loc = p97;
+net gpio_b2_18 loc = p100;
+net gpio_b2_19 loc = p99;
+net gpio_b2_20 loc = p102;
+net gpio_b2_21 loc = p101;
+net gpio_b2_22 loc = p105;
+net gpio_b2_23 loc = p104;

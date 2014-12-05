@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/simon/projects/easyfpga/soc_design/infrastructure/soc_bridge_tb_isim_translate.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="soc_bridge_tb" />
+            <top_module name="std_logic_1164" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpackage" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/soc_bridge_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/soc_bridge_tb/fpga_active_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fpga_active_i</obj_property>
+      <obj_property name="ObjectShortName">fpga_active_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/soc_bridge_tb/mcu_active_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mcu_active_o</obj_property>
+      <obj_property name="ObjectShortName">mcu_active_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/soc_bridge_tb/fifo_data_io" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_data_io[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_data_io[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/soc_bridge_tb/fifo_rxf_n_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_rxf_n_i</obj_property>
+      <obj_property name="ObjectShortName">fifo_rxf_n_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/soc_bridge_tb/fifo_txe_n_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_txe_n_i</obj_property>
+      <obj_property name="ObjectShortName">fifo_txe_n_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/soc_bridge_tb/fifo_rd_n_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_rd_n_o</obj_property>
+      <obj_property name="ObjectShortName">fifo_rd_n_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/soc_bridge_tb/fifo_wr_n_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_wr_n_o</obj_property>
+      <obj_property name="ObjectShortName">fifo_wr_n_o</obj_property>
+   </wvobject>
+</wave_config>

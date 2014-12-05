@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/simon/projects/easyfpga/soc_design/infrastructure/soc_bridge_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="constants" />
+            <top_module name="frame_ctrl_comp" />
+            <top_module name="numeric_std" />
+            <top_module name="soc_bridge_tb" />
+            <top_module name="std_logic_1164" />
+            <top_module name="transmit_frame_buffer_comp" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/soc_bridge_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="group113" type="group">
+      <obj_property name="label">MCU IF</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/fpga_active_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpga_active_i</obj_property>
+         <obj_property name="ObjectShortName">fpga_active_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/mcu_active_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">mcu_active_o</obj_property>
+         <obj_property name="ObjectShortName">mcu_active_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group112" type="group">
+      <obj_property name="label">External FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/fifo_data_io" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fifo_data_io[7:0]</obj_property>
+         <obj_property name="ObjectShortName">fifo_data_io[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/fifo_rxf_n_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fifo_rxf_n_i</obj_property>
+         <obj_property name="ObjectShortName">fifo_rxf_n_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/fifo_txe_n_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fifo_txe_n_i</obj_property>
+         <obj_property name="ObjectShortName">fifo_txe_n_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/fifo_rd_n_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fifo_rd_n_o</obj_property>
+         <obj_property name="ObjectShortName">fifo_rd_n_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/fifo_wr_n_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fifo_wr_n_o</obj_property>
+         <obj_property name="ObjectShortName">fifo_wr_n_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group143" type="group">
+      <obj_property name="label">FIFO Adapter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_ADAPTER/direction_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">direction_i</obj_property>
+         <obj_property name="ObjectShortName">direction_i</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group29" type="group">
+      <obj_property name="label">Enable Ctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/UUT/ENABLE_CONTROLLER/current_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">current_state</obj_property>
+         <obj_property name="ObjectShortName">current_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/ENABLE_CONTROLLER/fpga_active_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpga_active_i</obj_property>
+         <obj_property name="ObjectShortName">fpga_active_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/ENABLE_CONTROLLER/mcu_select_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">mcu_select_i</obj_property>
+         <obj_property name="ObjectShortName">mcu_select_i</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group119" type="group">
+      <obj_property name="label">Recbuf</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/UUT/RECEIVE_FRAME_BUFFER/buffer_ptr" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">buffer_ptr</obj_property>
+         <obj_property name="ObjectShortName">buffer_ptr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/RECEIVE_FRAME_BUFFER/frame_o" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">frame_o[87:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_o[87:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/RECEIVE_FRAME_BUFFER/clear_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clear_i</obj_property>
+         <obj_property name="ObjectShortName">clear_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/RECEIVE_FRAME_BUFFER/store_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">store_i</obj_property>
+         <obj_property name="ObjectShortName">store_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/RECEIVE_FRAME_BUFFER/frame_complete_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">frame_complete_o</obj_property>
+         <obj_property name="ObjectShortName">frame_complete_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/RECEIVE_FRAME_BUFFER/full_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">full_o</obj_property>
+         <obj_property name="ObjectShortName">full_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group109" type="group">
+      <obj_property name="label">Frame Ctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbi" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wbi</obj_property>
+         <obj_property name="ObjectShortName">wbi</obj_property>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbi.dat" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">.dat</obj_property>
+            <obj_property name="ObjectShortName">wbi.dat</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbi.ack" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">.ack</obj_property>
+            <obj_property name="ObjectShortName">wbi.ack</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbo" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wbo</obj_property>
+         <obj_property name="ObjectShortName">wbo</obj_property>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbo.dat" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">.dat</obj_property>
+            <obj_property name="ObjectShortName">wbo.dat</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbo.adr" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">.adr</obj_property>
+            <obj_property name="ObjectShortName">wbo.adr</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbo.stb" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">.stb</obj_property>
+            <obj_property name="ObjectShortName">wbo.stb</obj_property>
+         </wvobject>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbo.we" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">.we</obj_property>
+            <obj_property name="ObjectShortName">wbo.we</obj_property>
+         </wvobject>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/wbo.cyc" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">.cyc</obj_property>
+            <obj_property name="ObjectShortName">wbo.cyc</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/d" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">d</obj_property>
+         <obj_property name="ObjectShortName">d</obj_property>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/d.recbuf_complete" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">.recbuf_complete</obj_property>
+            <obj_property name="ObjectShortName">d.recbuf_complete</obj_property>
+         </wvobject>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/d.recbuf_frame" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">.recbuf_frame</obj_property>
+            <obj_property name="ObjectShortName">d.recbuf_frame</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/d.trabuf_busy" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">.trabuf_busy</obj_property>
+            <obj_property name="ObjectShortName">d.trabuf_busy</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/q" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">q</obj_property>
+         <obj_property name="ObjectShortName">q</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FRAME_CTRL/reg_out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">reg_out</obj_property>
+         <obj_property name="ObjectShortName">reg_out</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group123" type="group">
+      <obj_property name="label">Fifo Ctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_CONTROLLER/current_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">current_state</obj_property>
+         <obj_property name="ObjectShortName">current_state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_CONTROLLER/store_recbuf_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">store_recbuf_o</obj_property>
+         <obj_property name="ObjectShortName">store_recbuf_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_CONTROLLER/word_recbuf_o" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">word_recbuf_o[7:0]</obj_property>
+         <obj_property name="ObjectShortName">word_recbuf_o[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_CONTROLLER/word_trabuf_i" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">word_trabuf_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">word_trabuf_i[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_CONTROLLER/send_trabuf_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">send_trabuf_i</obj_property>
+         <obj_property name="ObjectShortName">send_trabuf_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_CONTROLLER/transmitter_mode_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">transmitter_mode_i</obj_property>
+         <obj_property name="ObjectShortName">transmitter_mode_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/FIFO_CONTROLLER/direction_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">direction_o</obj_property>
+         <obj_property name="ObjectShortName">direction_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group40" type="group">
+      <obj_property name="label">Trabuf</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/reg_out.state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">.state</obj_property>
+         <obj_property name="ObjectShortName">reg_out.state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/reg_out.byte_count" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">.byte_count</obj_property>
+         <obj_property name="ObjectShortName">reg_out.byte_count</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/reg_out.byte_index" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">.byte_index</obj_property>
+         <obj_property name="ObjectShortName">reg_out.byte_index</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/d.frame_valid" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.frame_valid</obj_property>
+         <obj_property name="ObjectShortName">d.frame_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/d.fifo_busy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.fifo_busy</obj_property>
+         <obj_property name="ObjectShortName">d.fifo_busy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/d.transmit_mode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.transmit_mode</obj_property>
+         <obj_property name="ObjectShortName">d.transmit_mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/q.word" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">.word</obj_property>
+         <obj_property name="ObjectShortName">q.word</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/q.send" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.send</obj_property>
+         <obj_property name="ObjectShortName">q.send</obj_property>
+      </wvobject>
+      <wvobject fp_name="/soc_bridge_tb/UUT/TRANSMIT_FRAME_BUFFER/q.trabuf_busy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.trabuf_busy</obj_property>
+         <obj_property name="ObjectShortName">q.trabuf_busy</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

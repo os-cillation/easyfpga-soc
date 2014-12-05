@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/simon/projects/easyfpga/soc_design/infrastructure/wb_slave_single_reg_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="constants" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="wb_slave_single_reg_comp" />
+            <top_module name="wb_slave_single_reg_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="5" />
+   <wvobject fp_name="/wb_slave_single_reg_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wb_slave_single_reg_tb/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wb_slave_single_reg_tb/uut_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">uut_in</obj_property>
+      <obj_property name="ObjectShortName">uut_in</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/wb_slave_single_reg_tb/uut_in.dat_i" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">.dat_i</obj_property>
+         <obj_property name="ObjectShortName">uut_in.dat_i</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/wb_slave_single_reg_tb/uut_in.adr_i" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">.adr_i</obj_property>
+         <obj_property name="ObjectShortName">uut_in.adr_i</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/wb_slave_single_reg_tb/uut_in.stb_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.stb_i</obj_property>
+         <obj_property name="ObjectShortName">uut_in.stb_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/wb_slave_single_reg_tb/uut_in.we_i" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.we_i</obj_property>
+         <obj_property name="ObjectShortName">uut_in.we_i</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/wb_slave_single_reg_tb/uut_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">uut_out</obj_property>
+      <obj_property name="ObjectShortName">uut_out</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/wb_slave_single_reg_tb/uut_out.dat_o" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">.dat_o</obj_property>
+         <obj_property name="ObjectShortName">uut_out.dat_o</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/wb_slave_single_reg_tb/uut_out.ack_o" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">.ack_o</obj_property>
+         <obj_property name="ObjectShortName">uut_out.ack_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/wb_slave_single_reg_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
