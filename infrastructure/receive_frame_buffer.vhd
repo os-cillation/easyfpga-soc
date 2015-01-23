@@ -173,6 +173,9 @@ busy_o <= frame_complete_s or clear_i;
                         frame_complete_s <= '0';
                      end if;
 
+                  when DETECT_OPC =>
+                     frame_complete_s <= '1';
+
                   -- OPC unknown
                   when others =>
                      frame_complete_s <= '1';

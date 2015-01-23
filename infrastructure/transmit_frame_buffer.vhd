@@ -167,6 +167,7 @@ begin
             case tmp.frame(0) is
                when ACK_OPC            => tmp.byte_count := ACK_LEN;
                when NACK_OPC           => tmp.byte_count := NACK_LEN;
+               when DETECT_REPLY_OPC   => tmp.byte_count := DETECT_REPLY_LEN;
                when REGISTER_RDRE_OPC  => tmp.byte_count := REGISTER_RDRE_LEN;
                when SOC_INT_OPC        => tmp.byte_count := SOC_INT_LEN;
                when others             => tmp.byte_count := 0;

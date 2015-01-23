@@ -176,6 +176,23 @@ process begin
       report "Invalid answer to status read"
       severity error;
 
+   --------------------------------------------------------
+   -- test detect function
+   --------------------------------------------------------
+   assert false
+      report "Will now send DETECT"
+      severity note;
+
+   send_to_fifo(x"EE",fifo_data_io,fifo_rxf_n_i, fifo_rd_n_o);
+
+
+   wait for 5 us;
+   assert(  data_out_s(data_out_cnt_s - 3) = x"FF" and -- detect reply opcode
+            data_out_s(data_out_cnt_s - 2) = x"EF" and -- fpga identifier
+            data_out_s(data_out_cnt_s - 1) = x"10")    -- parity
+      report "Wrong reply to detect frame"
+      severity error;
+
    ------------------------------------
    -- send register wr command
    ------------------------------------

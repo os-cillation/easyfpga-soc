@@ -16,9 +16,6 @@
 
 -------------------------------------------------------------------------------
 -- F R A M E    C O N T R O L L E R    (frame_ctrl.vhd)
---
--- TODO:
---    + Implement parity check
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -59,6 +56,10 @@ architecture two_proc of frame_ctrl is
       mcu_select0,   -- send reply
       mcu_select1,   -- wait until transmitted
       mcu_select2,   -- assert mcu select flag (enable_ctrl)
+
+      -- DETECT
+      detect0,       -- send reply
+      detect1,       -- wait until transmitted
 
       -- REGISTER_WR
       wr_init,    -- send register write command and wait until acknowledged
@@ -262,7 +263,6 @@ begin
 
          -- mcu_select
          if (d.recbuf_frame(7 downto 0) = MCU_SEL_OPC) then
-            --assert false report "received MCU_SEL" severity note;
 
             -- parity check
             if (( MCU_SEL_OPC xor
@@ -273,6 +273,11 @@ begin
                tmp.error_code := ERROR_PARITY;
                tmp.state := nack0;
             end if;
+
+         -- detect
+         elsif (d.recbuf_frame(7 downto 0) = DETECT_OPC) then
+            tmp.state := detect0;
+
 
          -- soc_int_en
          elsif (d.recbuf_frame(7 downto 0) = SOC_INT_EN_OPC) then
@@ -1633,7 +1638,7 @@ begin
             tmp.state := mcu_select0;
          end if;
 
-      --MCU_SELECT0 : Wait until transmitted-----------------------------------
+      --MCU_SELECT1 : Wait until transmitted-----------------------------------
       when mcu_select1 =>
          -- outputs
          q.recbuf_clear       <= '1';
@@ -1674,6 +1679,59 @@ begin
 
          -- next state
          tmp.state := idle;
+
+      --DETECT0 : Transmit reply-----------------------------------------------
+      when detect0 =>
+
+         -- reply frame
+         q.trabuf_frame(7 downto 0)   <= DETECT_REPLY_OPC;    -- opcode
+         q.trabuf_frame(15 downto 8)  <= DETECT_REPLY_FPGA; -- fpga identifier
+         q.trabuf_frame(23 downto 16) <= DETECT_REPLY_OPC XOR DETECT_REPLY_FPGA;
+         q.trabuf_frame(q.trabuf_frame'length-1 downto 24) <= (others => '-');
+
+         -- outputs
+         q.recbuf_clear       <= '1';
+         q.trabuf_valid       <= '1';
+         q.trabuf_length      <= 0;
+         q.mcu_select         <= '0';
+         q.transmitter_mode   <= '1';
+
+         wbo.dat  <= (others => '-');
+         wbo.adr  <= (others => '-');
+         wbo.stb  <= '0';
+         wbo.we   <= '0';
+         wbo.cyc  <= '0';
+
+         -- next state: wait until transmission buffer is busy
+         if (d.trabuf_busy = '1') then
+            tmp.state := detect1;
+         else
+            tmp.state := detect0;
+         end if;
+
+      --DETECT1 : Wait until transmitted---------------------------------------
+      when detect1 =>
+
+         -- outputs
+         q.recbuf_clear       <= '1';
+         q.trabuf_frame       <= (others => '-');
+         q.trabuf_valid       <= '0';
+         q.trabuf_length      <= 0;
+         q.mcu_select         <= '0';
+         q.transmitter_mode   <= '1';
+
+         wbo.dat  <= (others => '-');
+         wbo.adr  <= (others => '-');
+         wbo.stb  <= '0';
+         wbo.we   <= '0';
+         wbo.cyc  <= '0';
+
+         -- next state: wait until transmission buffer is done
+         if (d.trabuf_busy = '1') then
+            tmp.state := detect1;
+         else
+            tmp.state := idle;
+         end if;
 
       --SOC_INT_EN-------------------------------------------------------------
       when int_en =>

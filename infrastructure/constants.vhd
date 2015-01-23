@@ -30,6 +30,15 @@ package constants is
    constant MCU_SEL_OPC       : std_logic_vector(7 downto 0) := x"55";
    constant MCU_SEL_LEN       : integer := 3;
 
+   -- detect (who is communicating)
+   constant DETECT_OPC        : std_logic_vector(7 downto 0) := x"EE";
+   constant DETECT_LEN        : integer := 1;
+
+   constant DETECT_REPLY_OPC  : std_logic_vector(7 downto 0) := x"FF";
+   constant DETECT_REPLY_LEN  : integer := 3;
+
+   constant DETECT_REPLY_FPGA : std_logic_vector(7 downto 0) := x"EF";
+
    -- write operations
    constant REGISTER_WR_OPC   : std_logic_vector(7 downto 0) := x"66";
    constant REGISTER_WR_LEN   : integer := 6;
