@@ -74,6 +74,7 @@ package constants is
    constant PROTO_WC_TX_MAX   : integer := 16; -- number of bytes that fit into tx buffer
    constant PROTO_WC_MAX      : integer := REGISTER_MWR_LEN + REGISTER_DAT_MAX; -- longest frame possible
    constant FIFO_WIDTH        : integer := 8;
+   constant OPCODE_UNKNOWN_TIMEOUT : integer := 20;
 
    ---------------------------------
    -- error codes
@@ -82,7 +83,6 @@ package constants is
    constant ERROR_OPC_UNKNOWN : std_logic_vector(7 downto 0) := x"11";
    constant ERROR_PARITY      : std_logic_vector(7 downto 0) := x"22";
    constant ERROR_WB_TIMEOUT  : std_logic_vector(7 downto 0) := x"33";
-   constant ERROR_DATA_LENGTH : std_logic_vector(7 downto 0) := x"44";
 
    ---------------------------------
    -- wishbone

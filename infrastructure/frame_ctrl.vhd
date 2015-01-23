@@ -367,13 +367,13 @@ begin
 
          -- unknown opcode: send nack after a timeout
          else
-            assert false report "received unknown opcode" severity warning;
 
             -- stay in this state until timeout (use process_cnt for counting)
-            if (tmp.process_cnt < REGISTER_DAT_MAX) then
+            if (tmp.process_cnt < OPCODE_UNKNOWN_TIMEOUT) then
                tmp.state := opcode_check;
                tmp.process_cnt := tmp.process_cnt + 1;
             else
+               assert false report "received unknown opcode, will now reply nack" severity warning;
                -- send nack (assume correct ID reception)
                tmp.error_code := ERROR_OPC_UNKNOWN;
                tmp.state := nack0;
