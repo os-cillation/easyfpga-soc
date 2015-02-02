@@ -267,13 +267,15 @@ begin
    REGISTERS : process(clk,rst)
 -------------------------------------------------------------------------------
    begin
-      if (rst = '1') then
-         reg_out.frame <= (others => (others => '0'));
-         reg_out.state <= idle;
-         reg_out.byte_count <= 0;
-         reg_out.byte_index <= 0;
-      elsif rising_edge(clk) then
-         reg_out <= reg_in;
+      if (rising_edge(clk)) then
+         if (rst = '1') then
+            reg_out.frame <= (others => (others => '0'));
+            reg_out.state <= idle;
+            reg_out.byte_count <= 0;
+            reg_out.byte_index <= 0;
+         else
+            reg_out <= reg_in;
+         end if;
       end if;
    end process REGISTERS;
 

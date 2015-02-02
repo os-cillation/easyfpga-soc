@@ -77,14 +77,16 @@ begin
    end process STATEMACHINE;
 
    -------------------------------------------------------------------
-   --   State register with async reset. Resets to mcu_active state
+   --   State register with sync reset. Resets to mcu_active state
    -------------------------------------------------------------------
    STATE_REGISTER : process (clk_i, rst_i) is
    begin
-      if rst_i = '1' then
-         current_state <= mcu_active;
-      elsif rising_edge(clk_i) then
-         current_state <= next_state;
+      if (rising_edge(clk_i)) then
+         if (rst_i = '1') then
+            current_state <= mcu_active;
+         else
+            current_state <= next_state;
+         end if;
       end if;
    end process STATE_REGISTER;
 

@@ -110,10 +110,12 @@ begin
    REGISTERS : process(clk,rst)
 -------------------------------------------------------------------------------
    begin
-      if (rst = '1') then
-         reg_out.pwm_cnt      <= (others => '0');
-      elsif rising_edge(clk) then
-         reg_out <= reg_in;
+      if rising_edge(clk) then
+         if (rst = '1') then
+            reg_out.pwm_cnt      <= (others => '0');
+         else
+            reg_out <= reg_in;
+         end if;
       end if;
    end process REGISTERS;
 

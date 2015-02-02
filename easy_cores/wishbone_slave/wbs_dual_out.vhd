@@ -130,13 +130,8 @@ reg2_out <= reg_out_s.reg2;
       -- everything sync to clk
       if (rising_edge(wbs_in.clk)) then
 
-         -- reset all registers
-         if (wbs_in.rst = '1') then
-            reg_out_s.reg1 <= (others => '0');
-            reg_out_s.reg2 <= (others => '0');
-
          -- store reg1
-         elsif (reg1_ce_s = '1') then
+         if (reg1_ce_s = '1') then
             reg_out_s.reg1 <= reg_in_s.reg1;
 
          -- store reg2

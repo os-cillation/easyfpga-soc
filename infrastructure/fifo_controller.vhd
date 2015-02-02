@@ -249,10 +249,12 @@ begin
    REGISTERS : process (clk_i, rst_i) is
 --===========================================================================--
    begin
-      if (rst_i = '1') then
-         reg_out.state <= idle;
-      elsif rising_edge(clk_i) then
-         reg_out <= reg_in;
+      if (rising_edge(clk_i)) then
+         if (rst_i = '1') then
+            reg_out.state <= idle;
+         else
+            reg_out <= reg_in;
+         end if;
       end if;
    end process REGISTERS;
 end two_proc;
